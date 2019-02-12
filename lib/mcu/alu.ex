@@ -5,7 +5,8 @@ defmodule MCU.ALU do
   Arithmetic logic unit
   """
 
-  @add 0b0000
+  @op_and 0b0001
+  @op_or  0b0010
 
   @type op_code :: <<_::4>>
 
@@ -16,10 +17,20 @@ defmodule MCU.ALU do
   ## Examples
 
       iex> alias MCU.ALU
-      iex> ALU.compute(0b0000, 4, 7) # add
+      iex> ALU.compute(0b0001, 4, 7) # and
       4
+      iex> ALU.compute(0b0010, 3, 7) # or
+      7
   """
-  def compute(@add, a, b) do
+  def compute(op_code, a, b \\ 0) do
+    do_compute(op_code, a, b)
+  end
+
+  defp do_compute(@op_and, a, b) do
     band(a, b)
+  end
+
+  defp do_compute(@op_or, a, b) do
+    bor(a, b)
   end
 end
