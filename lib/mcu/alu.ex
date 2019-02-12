@@ -2,8 +2,7 @@ defmodule MCU.ALU do
   import Bitwise
 
   @moduledoc """
-  Arithmetic logic unit simulation.
-  https://en.wikipedia.org/wiki/Arithmetic_logic_unit
+  Arithmetic logic unit simulation. [More info](https://en.wikipedia.org/wiki/Arithmetic_logic_unit)
   """
 
   @op_not         0b0000
