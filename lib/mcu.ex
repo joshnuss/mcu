@@ -1,18 +1,5 @@
 defmodule MCU do
   @moduledoc """
-  Documentation for MCU.
+  Microcontroller CPU simulator
   """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> MCU.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end
