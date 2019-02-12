@@ -5,11 +5,13 @@ defmodule MCU.ALU do
   Arithmetic logic unit
   """
 
-  @op_and  0b0001
-  @op_or   0b0010
-  @op_nand 0b0011
-  @op_nor  0b0100
-  @op_xor  0b0101
+  @op_and         0b0001
+  @op_or          0b0010
+  @op_nand        0b0011
+  @op_nor         0b0100
+  @op_xor         0b0101
+  @op_shift_left  0b0110
+  @op_shift_right 0b0111
 
   @type op_code :: <<_::4>>
 
@@ -30,6 +32,10 @@ defmodule MCU.ALU do
       -8
       iex> ALU.compute(0b0101, 3, 7) # xor
       4
+      iex> ALU.compute(0b0110, 7, 1) # shift left
+      14
+      iex> ALU.compute(0b0111, 5, 1) # shift right
+      2
   """
   def compute(op_code, a, b \\ 0) do
     do_compute(op_code, a, b)
@@ -53,5 +59,13 @@ defmodule MCU.ALU do
 
   defp do_compute(@op_xor, a, b) do
     bxor(a, b)
+  end
+
+  defp do_compute(@op_shift_left, a, b) do
+    a <<< b
+  end
+
+  defp do_compute(@op_shift_right, a, b) do
+    a >>> b
   end
 end
