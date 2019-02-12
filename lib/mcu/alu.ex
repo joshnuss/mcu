@@ -9,6 +9,7 @@ defmodule MCU.ALU do
   @op_or   0b0010
   @op_nand 0b0011
   @op_nor  0b0100
+  @op_xor  0b0101
 
   @type op_code :: <<_::4>>
 
@@ -25,8 +26,10 @@ defmodule MCU.ALU do
       7
       iex> ALU.compute(0b0011, 3, 7) # nand
       -4
-      iex> ALU.compute(0b0100, 3, 7) # nand
+      iex> ALU.compute(0b0100, 3, 7) # nor
       -8
+      iex> ALU.compute(0b0101, 3, 7) # xor
+      4
   """
   def compute(op_code, a, b \\ 0) do
     do_compute(op_code, a, b)
@@ -46,5 +49,9 @@ defmodule MCU.ALU do
 
   defp do_compute(@op_nor, a, b) do
     bor(a, b) |> bnot()
+  end
+
+  defp do_compute(@op_xor, a, b) do
+    bxor(a, b)
   end
 end
