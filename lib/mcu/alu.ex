@@ -32,9 +32,9 @@ defmodule MCU.ALU do
       -8
       iex> ALU.compute(0b0101, 3, 7) # xor
       4
-      iex> ALU.compute(0b0110, 7, 1) # shift left
+      iex> ALU.compute(0b0110, 7) # shift left
       14
-      iex> ALU.compute(0b0111, 5, 1) # shift right
+      iex> ALU.compute(0b0111, 5) # shift right
       2
   """
   def compute(op_code, a, b \\ 0) do
@@ -61,11 +61,11 @@ defmodule MCU.ALU do
     bxor(a, b)
   end
 
-  defp do_compute(@op_shift_left, a, b) do
-    a <<< b
+  defp do_compute(@op_shift_left, a, _b) do
+    a <<< 1
   end
 
-  defp do_compute(@op_shift_right, a, b) do
-    a >>> b
+  defp do_compute(@op_shift_right, a, _b) do
+    a >>> 1
   end
 end
