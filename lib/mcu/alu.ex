@@ -5,16 +5,16 @@ defmodule MCU.ALU do
   Arithmetic logic unit simulation. [More info](https://en.wikipedia.org/wiki/Arithmetic_logic_unit)
   """
 
-  @op_not         0b0000
-  @op_and         0b0001
-  @op_or          0b0010
-  @op_nand        0b0011
-  @op_nor         0b0100
-  @op_xor         0b0101
-  @op_shift_left  0b0110
+  @op_not 0b0000
+  @op_and 0b0001
+  @op_or 0b0010
+  @op_nand 0b0011
+  @op_nor 0b0100
+  @op_xor 0b0101
+  @op_shift_left 0b0110
   @op_shift_right 0b0111
-  @op_add         0b1000
-  @op_subtract    0b1001
+  @op_add 0b1000
+  @op_subtract 0b1001
 
   @type op_code :: <<_::4>>
 
