@@ -15,6 +15,7 @@ defmodule MCU.ALU do
   @op_shift_right 0b0111
   @op_add 0b1000
   @op_subtract 0b1001
+  @op_eq 0b1010
 
   @type op_code :: <<_::4>>
 
@@ -45,6 +46,10 @@ defmodule MCU.ALU do
       7
       iex> ALU.compute(0b1001, 5, 2) # subtract
       3
+      iex> ALU.compute(0b1010, 5, 5) # eq
+      1
+      iex> ALU.compute(0b1010, 5, 2) # eq
+      0
   """
   def compute(op_code, a, b \\ 0) do
     do_compute(op_code, a, b)
@@ -89,4 +94,7 @@ defmodule MCU.ALU do
   defp do_compute(@op_subtract, a, b) do
     a - b
   end
+
+  defp do_compute(@op_eq, a, a), do: 1
+  defp do_compute(@op_eq, _a, _b), do: 0
 end
