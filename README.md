@@ -8,8 +8,17 @@ List of op codes:
 
 | Op Code | Value | Description |
 | ------- | ----- |------------ |
-| NOT | `0b0000`  | not A |
-| AND | `0b0001`  | A and b |
+| NOT  | `0b0000` | `not a` |
+| AND  | `0b0001` | `a and b` |
+| OR   | `0b0010` | `a or b` |
+| NAND | `0b0011` | `a nand b` |
+| NOR  | `0b0100` | `a nor b` |
+| XOR  | `0b0101` | `a xor b` |
+| SHIFT_LEFT | `0b0110` | `a << 1` |
+| SHIFT_RIGHT | `0b0111` | `a << 1` |
+| ADD  | `0b1000` | `a + b` |
+| SUB  | `0b1001` | `a - b` |
+| EQ   | `0b1010` | `a = b` |
 
 ## Installation
 
