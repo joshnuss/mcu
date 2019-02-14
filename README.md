@@ -2,6 +2,16 @@
 
 **TODO: Add description**
 
+## ALU
+
+List of op codes:
+
+|------|------|--------|
+|Op Code|Value|Description|
+|------|------|--------|
+|NOT|`0b0000`|not A|
+|AND|`0b0001`|A and b|
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
