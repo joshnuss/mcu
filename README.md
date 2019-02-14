@@ -4,7 +4,9 @@
 
 ## ALU
 
-List of op codes:
+The Arithmetic Logic Unit is 8 bits wide. It has 3 inputs: a 4-bit op code and 2x 8-bit inputs called `a` & `b`. It has 1 8-bit output called `y`.
+
+Supported op codes:
 
 | Op Code | Value | Description |
 | ------- | ----- |------------ |
