@@ -6,11 +6,10 @@
 
 List of op codes:
 
-|------|------|--------|
-|Op Code|Value|Description|
-|------|------|--------|
-|NOT|`0b0000`|not A|
-|AND|`0b0001`|A and b|
+| Op Code | Value | Description |
+| ------- | ----- |------------ |
+| NOT | `0b0000`  | not A |
+| AND | `0b0001`  | A and b |
 
 ## Installation
 
